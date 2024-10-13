@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\User;
+
 
 class PokemonSeeder extends Seeder
 {
@@ -12,6 +14,12 @@ class PokemonSeeder extends Seeder
      */
     public function run(): void
     {
+        User::create([
+            'name' => 'Andrew',
+            'email' => 'andrew@gmail.com',
+            'password' => bcrypt('password')
+        ]);
+
         \DB::table('pokemon')->delete();
         \DB::table('pokemon')->insert(array (
             0 =>

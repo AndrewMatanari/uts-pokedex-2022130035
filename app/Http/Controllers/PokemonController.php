@@ -115,7 +115,8 @@ class PokemonController extends Controller
 
         $pokemon->delete();
 
-        return redirect()->route('pokemon.index')->with('success', 'Pokemon berhasil dihapus.');
+        return redirect()->route('pokemon.index')->with('success', "Pokemon <strong>$pokemon->name</strong> berhasil dihapus.");
     }
+
 }
 
