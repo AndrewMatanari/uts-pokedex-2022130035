@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1 class="mb-4">Pokedex</h1>
+    <h1 class="mb-4 text-center"><strong>Pokedex</strong></h1>
 
     <!-- Grid Layout 3x3 -->
     <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -23,7 +23,26 @@
                             </a>
                         </h3>
                         <p class="card-text">
-                            <span class="badge rounded-pill bg-primary">{{ $pokemon->primary_type }}</span>
+                            @php
+                                // Array mapping tipe Pokemon dengan warna
+                                $typesColors = [
+                                    'fire' => 'bg-danger',
+                                    'water' => 'bg-primary',
+                                    'grass' => 'bg-success',
+                                    'electric' => 'bg-warning',
+                                    'bug' => 'bg-light',
+                                    'ghost' => 'bg-secondary',
+                                    'psychic' => 'bg-info',
+                                    'fighting' => 'bg-dark',
+                                    'normal' => 'bg-muted text-dark',
+                                ];
+
+                                // Ambil warna badge sesuai tipe Pokemon
+                                $badgeColor = $typesColors[strtolower($pokemon->primary_type)] ?? 'bg-secondary'; // Default ke 'bg-secondary' jika tipe tidak ditemukan
+                            @endphp
+
+                            <!-- Menampilkan badge dengan warna yang sesuai -->
+                            <span class="badge rounded-pill {{ $badgeColor }} text-white">{{ $pokemon->primary_type }}</span>
                         </p>
                     </div>
                 </div>
@@ -31,8 +50,7 @@
         @endforeach
     </div>
 
-    <!-- Pagination -->
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center mt-4">
         {{ $pokemons->links() }}
     </div>
 </div>
