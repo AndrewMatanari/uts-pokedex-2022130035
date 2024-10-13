@@ -12,6 +12,11 @@ class PokemonController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['show']);
+    }
+
     public function index()
     {
         $pokemons = Pokemon::paginate(20);

@@ -23,7 +23,6 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <!-- Pastikan path gambar benar dengan menggunakan storage -->
                     <img src="{{ asset('storage/pokemon.png') }}" alt="Pokemon" width="150">
                 </a>
 

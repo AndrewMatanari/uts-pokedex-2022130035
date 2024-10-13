@@ -28,7 +28,7 @@
     </div>
 
     <div class="mt-3 text-center">
-        <a href="{{ route('pokemon.index') }}" class="btn btn-secondary" style="background-color: #3b4cca; border: none;">Back to List</a>
+        <a href="{{ route('pokedex.index') }}" class="btn btn-secondary" style="background-color: #3b4cca; border: none;">Back to Pokedex</a>
     </div>
 </div>
 @endsection
