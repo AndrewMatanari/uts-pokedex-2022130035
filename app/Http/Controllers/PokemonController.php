@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pokemon;
 use Illuminate\Support\Facades\Storage;
+use App\Providers\Paginator;
 
 class PokemonController extends Controller
 {
