@@ -27,8 +27,9 @@
         </div>
     </div>
 
-    <div class="mt-3 text-center">
+    <div class="d-flex justify-content-between mt-3">
         <a href="{{ route('pokedex.index') }}" class="btn btn-secondary" style="background-color: #3b4cca; border: none;">Back to Pokedex</a>
+        <a href="{{ route('pokemon.index') }}" class="btn btn-secondary" style="background-color: #3b4cca; border: none;">Pokemon Dashboard</a>
     </div>
 </div>
 @endsection
