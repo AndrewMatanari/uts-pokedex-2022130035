@@ -66,7 +66,8 @@
         </div>
 
         <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="is_legendary" name="is_legendary" value="1" {{ old('is_legendary') ? 'checked' : '' }}>
+            <input type="hidden" name="is_legendary" value="0">
+            <input type="checkbox" class="form-check-input" id="is_legendary" name="is_legendary" value="1" {{ old('is_legendary', false) ? 'checked' : '' }}>
             <label class="form-check-label" for="is_legendary">Legendary</label>
         </div>
 
