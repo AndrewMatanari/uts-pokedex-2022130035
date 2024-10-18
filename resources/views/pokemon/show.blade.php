@@ -12,7 +12,7 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">#{{ str_pad($pokemon->id, 4, '0', STR_PAD_LEFT) }} - {{ $pokemon->name }}</h5>
+                    <h5 class="card-title">{{$padded = Str::padLeft($pokemon->id, 5, '#0000')}}</h5>
                     <p class="card-text"><strong>Species:</strong> {{ $pokemon->species }}</p>
                     <p class="card-text"><strong>Primary Type:</strong> <span class="badge" style="background-color: {{ $pokemon->primary_type == 'Fire' ? '#FF5733' : '#3498db' }};">{{ $pokemon->primary_type }}</span></p>
                     <p class="card-text"><strong>Weight:</strong> {{ $pokemon->weight }} kg</p>

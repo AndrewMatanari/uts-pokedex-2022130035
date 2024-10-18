@@ -24,7 +24,7 @@
             <tbody>
                 @foreach ($pokemons as $pokemon)
                 <tr>
-                    <td>#{{ str_pad($pokemon->id, 4, '0', STR_PAD_LEFT) }}</td>
+                    <td>{{$padded = Str::padLeft($pokemon->id, 5, '#0000')}}</td>
                     <td>{{ $pokemon->name }}</td>
                     <td>{{ $pokemon->species }}</td>
                     <td>

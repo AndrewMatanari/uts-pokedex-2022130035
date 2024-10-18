@@ -3,8 +3,6 @@
 @section('content')
 <div class="container">
     <h1 class="mb-4 text-center"><strong>Pokedex</strong></h1>
-
-    <!-- Grid Layout 3x3 -->
     <div class="row row-cols-1 row-cols-md-3 g-4">
         @foreach($pokemons as $pokemon)
             <div class="col">
@@ -15,7 +13,7 @@
                     </a>
                     <div class="card-body">
                         <h7 class="card-title">
-                            <span class="fw-bold">#{{ str_pad($pokemon->id, 4, '0', STR_PAD_LEFT) }}</span>
+                            <span class="fw-bold">{{$padded = Str::padLeft($pokemon->id, 5, '#0000')}}</span>
                         </h7>
                         <h3>
                             <a href="{{ route('pokemon.show', $pokemon->id) }}" class="text-decoration-none text-dark">
@@ -24,7 +22,6 @@
                         </h3>
                         <p class="card-text">
                             @php
-                                // Array mapping tipe Pokemon dengan warna
                                 $typesColors = [
                                     'fire' => 'bg-danger',
                                     'water' => 'bg-primary',
@@ -38,10 +35,9 @@
                                 ];
 
                                 // Ambil warna badge sesuai tipe Pokemon
-                                $badgeColor = $typesColors[strtolower($pokemon->primary_type)] ?? 'bg-secondary'; // Default ke 'bg-secondary' jika tipe tidak ditemukan
+                                $badgeColor = $typesColors[strtolower($pokemon->primary_type)] ?? 'bg-secondary';
                             @endphp
 
-                            <!-- Menampilkan badge dengan warna yang sesuai -->
                             <span class="badge rounded-pill {{ $badgeColor }} text-white">{{ $pokemon->primary_type }}</span>
                         </p>
                     </div>
